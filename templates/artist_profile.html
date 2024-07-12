@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="artist-profile">
+    <div class="artist-info">
+        <h1>{{ artist.name }}</h1>
+        <p>{{ artist.location }}</p>
+        <p>{{ artist.bio }}</p>
+    </div>
+    <div class="artist-products">
+        <h2>Gallery of Works</h2>
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-item">
+                <a href="{{ url_for('product_detail', product_id=product.product_id) }}">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                    <h3>{{ product.name }}</h3>
+                    <p>${{ product.price }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="custom-commission">
+        <h2>Request a Custom Piece</h2>
+        <form method="POST" action="{{ url_for('request_custom', artist_id=artist.user_id) }}">
+            <textarea name="description" placeholder="Describe your custom request"></textarea>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

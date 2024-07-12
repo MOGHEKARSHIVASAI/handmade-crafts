@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="shop-filters">
+    <h2>Filters</h2>
+    <form method="GET" action="{{ url_for('shop') }}">
+        <div class="filter-category">
+            <label for="category">Category</label>
+            <select name="category" id="category">
+                {% for category in categories %}
+                <option value="{{ category.category_id }}">{{ category.category_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="filter-price">
+            <label for="price">Price Range</label>
+            <input type="range" name="price" id="price" min="0" max="1000" step="50">
+        </div>
+        <div class="filter-rating">
+            <label for="rating">Rating</label>
+            <select name="rating" id="rating">
+                <option value="1">1 Star</option>
+                <option value="2">2 Stars</option>
+                <option value="3">3 Stars</option>
+                <option value="4">4 Stars</option>
+                <option value="5">5 Stars</option>
+            </select>
+        </div>
+        <button type="submit">Apply Filters</button>
+    </form>
+</div>
+<div class="product-listings">
+    <h2>Products</h2>
+    <div class="product-grid">
+        {% for product in products %}
+        <div class="product-item">
+            <a href="{{ url_for('product_detail', product_id=product.product_id) }}">
+                <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                <h3>{{ product.name }}</h3>
+                <p>${{ product.price }}</p>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        <a href="#">Previous</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">Next</a>
+    </div>
+</div>
+{% endblock %}

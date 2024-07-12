@@ -1,0 +1,331 @@
+/* styles.css */
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header styles */
+.header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure header is on top of other content */
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.header ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.header ul li a:hover {
+    color: #f2f2f2;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+}
+
+.footer p {
+    margin: 0;
+}
+
+/* Main content styles */
+.main-content {
+    padding-top: 60px; /* Adjust according to header height */
+}
+
+/* Home page styles */
+.home-banner {
+    background-image: url('../static/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.home-banner h1 {
+    font-size: 3em;
+}
+
+.home-banner p {
+    font-size: 1.5em;
+}
+
+.home-featured {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 40px;
+}
+
+.home-featured .product {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-featured .product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+/* Shop page styles */
+.shop-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.shop-product {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-product img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.shop-sidebar {
+    width: 20%;
+    margin-right: 20px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.shop-sidebar h3 {
+    margin-top: 0;
+}
+
+.shop-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.shop-sidebar ul li {
+    margin-bottom: 10px;
+}
+
+/* Product detail page styles */
+.product-detail {
+    display: flex;
+    margin-top: 20px;
+    padding: 20px;
+}
+
+.product-detail .product-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.product-detail .product-info {
+    flex: 2;
+}
+
+.product-detail img {
+    width: 100%;
+    height: auto;
+}
+
+.product-detail h2 {
+    margin-top: 0;
+}
+
+.product-detail .artist-info {
+    margin-top: 20px;
+}
+
+.product-detail .reviews {
+    margin-top: 20px;
+}
+
+.product-detail .review {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.product-detail .review p {
+    margin: 0;
+}
+
+/* Artist profile page styles */
+.artist-profile {
+    display: flex;
+    margin-top: 20px;
+}
+
+.artist-profile .artist-info {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.artist-profile .gallery {
+    flex: 2;
+}
+
+.artist-profile img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Login and Register page styles */
+.form-container {
+    width: 50%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-container input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.form-container input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.form-container p {
+    text-align: center;
+}
+
+/* User dashboard styles */
+.dashboard-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.dashboard-section {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section h3 {
+    margin-top: 0;
+}
+
+.dashboard-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.dashboard-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact page styles */
+.contact-container {
+    width: 50%;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-container h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-container input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.contact-container input[type="submit"]:hover {
+    background-color: #555;
+}
+

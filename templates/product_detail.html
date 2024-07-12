@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="product-detail">
+    <div class="product-images">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+    </div>
+    <div class="product-info">
+        <h1>{{ product.name }}</h1>
+        <p>${{ product.price }}</p>
+        <p>{{ product.description }}</p>
+        <p>Availability: {{ product.stock_quantity > 0 ? 'In Stock' : 'Out of Stock' }}</p>
+        <button>Add to Cart</button>
+    </div>
+    <div class="artist-profile">
+        <h2>About the Artist</h2>
+        <p>{{ artist.name }}</p>
+        <p>{{ artist.bio }}</p>
+        <a href="{{ url_for('artist_profile', artist_id=artist.user_id) }}">View Profile</a>
+    </div>
+    <div class="customer-reviews">
+        <h2>Customer Reviews</h2>
+        {% for review in reviews %}
+        <div class="review-item">
+            <p>{{ review.comment }}</p>
+            <p>Rating: {{ review.rating }} Stars</p>
+            <p>- {{ review.user.name }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

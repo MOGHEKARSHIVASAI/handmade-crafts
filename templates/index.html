@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-banner">
+    <img src="{{ url_for('static', filename='images/banner.jpg') }}" alt="Handmade Goods">
+    <div class="cta-buttons">
+        <a href="{{ url_for('shop') }}" class="btn">Shop Now</a>
+        <a href="{{ url_for('artist_profile', artist_id=1) }}" class="btn">Discover Artisans</a>
+    </div>
+</div>
+<div class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="carousel">
+        {% for product in featured_products %}
+        <div class="product-item">
+            <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            <h3>{{ product.name }}</h3>
+            <p>${{ product.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="categories">
+    <h2>Categories</h2>
+    <ul>
+        <li><a href="{{ url_for('shop', category_id=1) }}">Jewelry</a></li>
+        <li><a href="{{ url_for('shop', category_id=2) }}">Clothing</a></li>
+        <li><a href="{{ url_for('shop', category_id=3) }}">Home Decor</a></li>
+    </ul>
+</div>
+<div class="about-us">
+    <h2>About Us</h2>
+    <p>Welcome to Handmade Marketplace, your number one source for all things handmade. We're dedicated to giving you the very best of handmade products, with a focus on quality, uniqueness, and customer service.</p>
+</div>
+<div class="testimonials">
+    <h2>Testimonials</h2>
+    <div class="testimonial-item">
+        <p>"I love the unique products on Handmade Marketplace. The quality is top-notch and the artisans are very talented!"</p>
+        <p>- Customer</p>
+    </div>
+    <div class="testimonial-item">
+        <p>"Handmade Marketplace has helped me reach more customers and share my craft with the world."</p>
+        <p>- Artisan</p>
+    </div>
+</div>
+{% endblock %}
